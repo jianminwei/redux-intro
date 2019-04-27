@@ -8,9 +8,6 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    //give the initial props counter 0
-    this.props = {counter: 0};
-
     //bind the methods as a good practice
     this.onButtonClick.bind(this);
   }
