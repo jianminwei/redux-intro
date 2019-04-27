@@ -19,6 +19,22 @@ ReactDOM.render(
     document.getElementById('root')
 );
 
+//Below is for using Webpack Hot Module Reloader
+if (module.hot) {
+    module.hot.accept('./App', () => {
+      const NextApp = require('./App').default;
+      ReactDOM.render(
+        <Provider store={store}><NextApp /></Provider>,
+        document.getElementById('root')
+      );
+    });
+  
+    module.hot.accept('./reducers', () => {
+      const nextRootReducer = require('./reducers').default;
+      store.replaceReducer(nextRootReducer);
+    });
+}
+
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
