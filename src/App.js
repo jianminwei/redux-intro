@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './App.css';
+import {increaseCounter} from './actions';
 
 class App extends Component {
 
@@ -16,13 +17,8 @@ class App extends Component {
 
   onButtonClick = e => {
       //1. This dispatch is injected by react-redux connect
-      //2. Dispatch a action, and send the payload.
-      this.props.dispatch({ 
-        type: 'INCREASE_COUNTER',
-        payload: {
-          counter_increment_unit: 2
-        } 
-      })   
+      //2. call the action creator to dispatch an action.
+      this.props.dispatch(increaseCounter())   
   };
 
   render() {
