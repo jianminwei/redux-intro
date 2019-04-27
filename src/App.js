@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import './App.css';
 
 class App extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      counter: 5
-    };
+
+    //give the initial counter 0
+    this.props = {counter: 0};
   }
 
   onButtonClick = e => {
-    this.setState({ counter: this.state.counter + 1 });
+    //this.setState({ counter: this.state.counter + 1 });
   };
 
   render() {
@@ -21,7 +22,7 @@ class App extends Component {
           <h2>Redux-self</h2>
         </header>
         <div>
-          Counter: <span id="counter">{this.state.counter}</span>
+          Counter: <span id="counter">{this.props.counter}</span>
         </div>
         
         <button onClick={this.onButtonClick}>Increase Counter</button>
@@ -30,4 +31,10 @@ class App extends Component {
   }
 }
 
-export default App;
+function mapStateToProps(state) {
+  return {
+    counter: state.counter
+  }
+}
+
+export default connect(mapStateToProps)(App);
