@@ -2,13 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
+import { devToolsEnhancer } from 'redux-devtools-extension'
 import {counter} from './reducers';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 //create the redux store
-const store = createStore(counter);
+const store = createStore(counter, devToolsEnhancer());
 
 ReactDOM.render(
     //Provider is to make the 'store' available to the 'App'
