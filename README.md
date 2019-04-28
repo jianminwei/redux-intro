@@ -1,5 +1,23 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+#### App description
+This is a simple app to demonstrate using Redux in React app. It is a simple counter incrementable by a button. It is implemented in 2 approaches. 
+
+1. Uses pure React state to manage the counter.
+2. Uses Redux and React-redux to manage the state.
+
+Below are the git commit points. Checkout out different point to see the details.
+
+* 672d3d8 (HEAD -> master, origin/master, DEV) Get rid of Warning: App(...): When calling super() in , make sure to pass up the same props that your component's constructor was passed.
+* e8eeca2 Added Webpack Hot Module Reloader to src/index.js
+* e93c1a5 Added redux-devtools-extension - good tool to see redux works
+* 28d5fb1 Added INCREASE_COUNTER action creator and used it in dispatching the event in App
+* aa7f603 Added INCREASE_COUNTER event and the event handler in the reducer
+* abc4d36 Added initial redux, react-redux and the initial state. No actions yet
+* 92ffded A simple update counter by button example
+* ef502f7 Initial Environment Setup - No Development
+* 82990b2 Initial commit from Create React App
+
 ## Available Scripts
 
 In the project directory, you can run:
